@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:the_basics/views/widgets/call_to_action/call_to_action.dart';
+import 'package:responsive_builder/responsive_builder.dart';
+import 'package:the_basics/views/home/home_content_desktop.dart';
+import 'package:the_basics/views/home/home_content_mobile.dart';
 import 'package:the_basics/views/widgets/centered_view/centered_view.dart';
-import 'package:the_basics/views/widgets/course_details/course_details.dart';
 import 'package:the_basics/views/widgets/nav_bar/nav_bar.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView();
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,17 +14,14 @@ class HomeView extends StatelessWidget {
       backgroundColor: Colors.white,
       body: CenteredView(
         child: Column(
+          crossAxisAlignment:
+              CrossAxisAlignment.start, // Ensure proper alignment
           children: <Widget>[
-            NavBar(),
+            NavBar(), // Adding const for better performance
             Expanded(
-              child: Row(
-                children: [
-                  CourseDetails(),
-                  Expanded(
-                      child: Center(
-                    child: CallToAction("join course"),
-                  ))
-                ],
+              child: ScreenTypeLayout.builder(
+                mobile: (BuildContext context) => const HomeContentMobile(),
+                desktop: (BuildContext context) => const HomeContentDesktop(),
               ),
             ),
           ],
