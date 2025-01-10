@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_basics/views/widgets/drawer/nav_drawer.dart';
 import 'package:the_basics/views/widgets/nav_bar/nav_bar_logo.dart';
 
 class NavBarMobile extends StatelessWidget {
@@ -14,7 +15,9 @@ class NavBarMobile extends StatelessWidget {
         children: <Widget>[
           IconButton(
             icon: Icon(Icons.menu),
-            onPressed: () {},
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
           ),
           NavBarLogo()
         ],
