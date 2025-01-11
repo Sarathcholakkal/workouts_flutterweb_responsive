@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_basics/locator/route/route_name.dart';
 import 'package:the_basics/views/widgets/nav_bar/nav_bar_item.dart';
 
 class NavDrawerItem extends StatelessWidget {
@@ -15,7 +16,11 @@ class NavDrawerItem extends StatelessWidget {
         children: <Widget>[
           Icon(icon),
           SizedBox(width: 30),
-          NavBarItem(title: title),
+          NavBarItem(title: "Episodes", navigationPath: episodesRoute),
+          SizedBox(width: 30),
+          NavBarItem(title: "About", navigationPath: aboutRoute),
+          // SizedBox(width: 30),
+          // NavBarItem(title: "Home", navigationPath: homeRoute),
         ],
       ),
     );
