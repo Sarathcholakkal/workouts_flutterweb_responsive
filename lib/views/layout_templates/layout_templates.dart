@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:the_basics/locator/locator.dart';
-import 'package:the_basics/locator/navigation_services.dart';
-import 'package:the_basics/locator/route/route_name.dart';
-import 'package:the_basics/route/route_function.dart';
-
 import 'package:the_basics/views/widgets/centered_view/centered_view.dart';
 import 'package:the_basics/views/widgets/drawer/nav_drawer.dart';
 import 'package:the_basics/views/widgets/nav_bar/nav_bar.dart';
 
-class LayoutTemplates extends StatefulWidget {
-  const LayoutTemplates({super.key});
+class LayoutTemplates extends StatelessWidget {
+  final Widget newchild;
 
-  @override
-  State<LayoutTemplates> createState() => _LayoutTemplatesState();
-}
+  const LayoutTemplates({super.key, required this.newchild});
 
-class _LayoutTemplatesState extends State<LayoutTemplates> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(builder: (context, sizingInformation) {
@@ -32,11 +24,7 @@ class _LayoutTemplatesState extends State<LayoutTemplates> {
             children: <Widget>[
               NavBar(), // Adding const for better performance
               Expanded(
-                child: Navigator(
-                  key: locator<NavigationService>().navigatorKey,
-                  onGenerateRoute: generateRoute,
-                  initialRoute: homeRoute,
-                ),
+                child: newchild,
               ),
             ],
           ),

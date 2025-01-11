@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:the_basics/locator/locator.dart';
-import 'package:the_basics/views/home/home_view.dart';
+import 'package:the_basics/locator/navigation_services.dart';
+import 'package:the_basics/locator/route/route_name.dart';
+import 'package:the_basics/route/route_function.dart';
 import 'package:the_basics/views/layout_templates/layout_templates.dart';
 
 void main() {
@@ -20,7 +22,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Open Sans'),
       ),
-      home: LayoutTemplates(),
+      builder: (context, child) => LayoutTemplates(newchild: child!),
+      navigatorKey: locator<NavigationService>().navigatorKey,
+      onGenerateRoute: generateRoute,
+      initialRoute: homeRoute,
     );
   }
 }

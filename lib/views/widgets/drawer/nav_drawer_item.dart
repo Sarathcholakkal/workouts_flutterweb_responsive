@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:the_basics/locator/route/route_name.dart';
 import 'package:the_basics/views/widgets/nav_bar/nav_bar_item.dart';
 
 class NavDrawerItem extends StatelessWidget {
