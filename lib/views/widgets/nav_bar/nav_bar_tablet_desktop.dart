@@ -22,10 +22,10 @@ class NavBarTabletDesktop extends StatelessWidget {
                 width: 60,
               ),
               NavBarItem(title: "About", navigationPath: aboutRoute),
-              // SizedBox(
-              //   width: 60,
-              // ),
-              // NavBarItem(title: "Home", navigationPath: homeRoute),
+              SizedBox(
+                width: 60,
+              ),
+              NavBarItem(title: "Home", navigationPath: homeRoute),
             ],
           )
         ],

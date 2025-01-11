@@ -5,8 +5,13 @@ import 'package:the_basics/views/widgets/nav_bar/nav_bar_item.dart';
 class NavDrawerItem extends StatelessWidget {
   final String title;
   final IconData icon;
+  final String navigationPath;
 
-  const NavDrawerItem({super.key, required this.title, required this.icon});
+  const NavDrawerItem(
+      {super.key,
+      required this.title,
+      required this.icon,
+      required this.navigationPath});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +21,7 @@ class NavDrawerItem extends StatelessWidget {
         children: <Widget>[
           Icon(icon),
           SizedBox(width: 30),
-          NavBarItem(title: "Episodes", navigationPath: episodesRoute),
-          SizedBox(width: 30),
-          NavBarItem(title: "About", navigationPath: aboutRoute),
-          // SizedBox(width: 30),
-          // NavBarItem(title: "Home", navigationPath: homeRoute),
+          NavBarItem(title: title, navigationPath: navigationPath),
         ],
       ),
     );

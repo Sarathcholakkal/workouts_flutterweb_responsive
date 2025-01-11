@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_basics/locator/route/route_name.dart';
 import 'package:the_basics/views/widgets/drawer/nav_drawer_header.dart';
 import 'package:the_basics/views/widgets/drawer/nav_drawer_item.dart';
 
@@ -19,13 +20,13 @@ class NavDrawer extends StatelessWidget {
         children: [
           NavDrawerHeader(),
           NavDrawerItem(
-            title: 'Episodes',
-            icon: Icons.videocam,
-          ),
+              title: 'Episodes',
+              icon: Icons.videocam,
+              navigationPath: episodesRoute),
           NavDrawerItem(
-            title: 'About',
-            icon: Icons.help,
-          ),
+              title: 'About', icon: Icons.help, navigationPath: aboutRoute),
+          NavDrawerItem(
+              title: 'Home', icon: Icons.home, navigationPath: homeRoute)
         ],
       ),
     );
